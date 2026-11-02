@@ -1,0 +1,66 @@
+{
+ "titre": "<em>Sabi</em>, chatbot WhatsApp",
+ "type": "Constructeur de chatbot · WhatsApp Business",
+ "sous_titre": "Scénarios en blocs, boutons, questions, actions, transfert humain, simulateur",
+ "couleur": "#075e54",
+ "graine": 32,
+ "voix": [
+  [
+   3.3,
+   "Sabi, un constructeur de chatbots pour WhatsApp Business,"
+  ],
+  [
+   8.0,
+   "le scénario se dessine en blocs reliés, et le simulateur le joue en direct,"
+  ],
+  [
+   15.6,
+   "prise de commande, suivi, tarifs, et un conseiller humain quand il le faut."
+  ]
+ ],
+ "etapes": [
+  {
+   "t": "wait",
+   "ms": 4300
+  },
+  {
+   "t": "eval",
+   "js": "window.__bouton(0)",
+   "pause": 2400
+  },
+  {
+   "t": "type",
+   "sel": "#ti",
+   "text": "Fabrice Nana",
+   "delay": 40,
+   "pause": 200
+  },
+  {
+   "t": "eval",
+   "js": "document.querySelector('#cmp button').click()",
+   "pause": 2700
+  },
+  {
+   "t": "type",
+   "sel": "#ti",
+   "text": "Bonamoussadi, rue des Manguiers",
+   "delay": 25,
+   "pause": 200
+  },
+  {
+   "t": "eval",
+   "js": "document.querySelector('#cmp button').click()",
+   "pause": 2700
+  },
+  {
+   "t": "eval",
+   "js": "window.__bouton(1)",
+   "pause": 3600
+  },
+  {
+   "t": "eval",
+   "js": "document.getElementById('fit').click()",
+   "pause": 1500
+  }
+ ]
+}

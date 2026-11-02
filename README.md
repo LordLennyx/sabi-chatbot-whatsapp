@@ -1,0 +1,31 @@
+# Sabi
+
+**Constructeur de chatbot WhatsApp Business** — Outil visuel pour concevoir des chatbots WhatsApp sans code, présenté avec le scénario d'un pressing : blocs reliés (message, boutons, question avec validation, action, transfert vers un conseiller), toile déplaçable et zoomable, inspecteur avec statistiques par bloc, variables de conversation, et simulateur WhatsApp qui joue le scénario en surlignant le bloc en cours.
+
+**Démo en ligne : [https://lordlennyx.github.io/sabi-chatbot-whatsapp/](https://lordlennyx.github.io/sabi-chatbot-whatsapp/)**
+
+Spot de présentation (30 s) : [media/spot-30s.mp4](https://lordlennyx.github.io/sabi-chatbot-whatsapp/media/spot-30s.mp4)
+
+![Aperçu bureau](media/capture-bureau.png)
+
+## Ce que le projet montre
+
+- Toile de scénario : blocs déplaçables, liens courbes animés, zoom à la molette, recentrage
+- Six types de blocs : déclencheur, message avec variables, boutons, question (texte, téléphone, n° de commande), action, conseiller
+- Inspecteur : texte, variable de destination, validation, liens entre blocs, statistiques de passage et d'abandon
+- Simulateur WhatsApp : indicateur de saisie, boutons de réponse, compréhension de mots-clés libres (tarifs, conseiller)
+- Suivi visuel : la caméra suit le bloc actif et le chemin parcouru s'anime
+
+## Réalisation
+
+- **Stack :** HTML, CSS, JavaScript natif, SVG
+- **Typographies :** Outfit, Noto Sans
+- **Évolutions possibles :** connexion à l'API WhatsApp Cloud de Meta, compréhension du langage par un LLM, boîte de réception partagée, envois groupés et relances
+
+| Bureau | Mobile |
+|---|---|
+| ![](media/capture-bureau-complet.png) | ![](media/capture-mobile.png) |
+
+---
+
+Client et contenus fictifs, créés pour la démonstration. Conception, design et développement : **Njundiyimun Béchard** — [github.com/LordLennyx](https://github.com/LordLennyx)
