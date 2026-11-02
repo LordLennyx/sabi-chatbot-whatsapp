@@ -107,16 +107,20 @@ const KIND={start:['Déclencheur','--n6','<path d="M5 3l14 9-14 9z" fill="curren
  ask:['Question','--n3','<path d="M9 9a3 3 0 1 1 4 2.8c-.8.4-1 1-1 2.2M12 18v.5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>'],act:['Action','--n4','<path d="M13 2 4 14h7l-1 8 9-12h-7z" fill="currentColor"/>'],human:['Conseiller','--n5','<circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6" fill="none" stroke="currentColor" stroke-width="2"/>']};
 let N=[
  {id:'s',k:'start',x:40,y:300,t:'Message reçu : « bonjour », « menu » ou tout premier message',nx:'m1'},
- {id:'m1',k:'msg',x:330,y:280,t:'Bonjour {{nom_profil}}\nBienvenue chez Pressing Éclat, Bonamoussadi. Que souhaitez-vous faire ?',nx:'b1'},
+ {id:'m1',k:'msg',x:330,y:280,t:'Bonjour {{nom_profil}}\nBienvenue chez Pressing Éclat, Lyon 3e. Que souhaitez-vous faire ?',nx:'b1'},
  {id:'b1',k:'btn',x:620,y:250,t:'Choisissez une option',o:[['Ramassage à domicile','q1'],['Suivre ma commande','q4'],['Nos tarifs','m4'],['Parler à un conseiller','h1']]},
  {id:'q1',k:'ask',x:930,y:40,t:'Quel est votre nom ?',v:'nom',val:'texte',nx:'q2'},
  {id:'q2',k:'ask',x:1210,y:40,t:'Merci {{nom}}. À quelle adresse passer récupérer votre linge ?',v:'adresse',val:'texte',nx:'q3'},
  {id:'q3',k:'btn',x:1490,y:20,t:'Quel créneau vous arrange ?',v:'creneau',o:[['Demain 8 h – 10 h','a1'],['Demain 17 h – 19 h','a1'],['Samedi matin','a1']]},
  {id:'a1',k:'act',x:1780,y:60,t:'Créer la commande dans le logiciel du pressing\nEnvoyer un SMS au livreur',nx:'m2'},
- {id:'m2',k:'msg',x:2060,y:60,t:'C\'est noté\nCommande {{commande}} : passage {{creneau}} au {{adresse}}.\nPaiement à la livraison ou par Mobile Money.',nx:null},
+ {id:'m2',k:'msg',x:2060,y:60,t:'C\'est noté\nCommande {{commande}} : passage {{creneau}} au {{adresse}}.\nPaiement à la livraison par carte ou en ligne.',nx:null},
  {id:'q4',k:'ask',x:930,y:330,t:'Indiquez votre numéro de commande (ex. EC-2041)',v:'numero',val:'commande',nx:'m3'},
  {id:'m3',k:'msg',x:1210,y:330,t:'Commande {{numero}} : 6 pièces, lavage terminé, repassage en cours.\nPrête demain à partir de 14 h',nx:'b1'},
- {id:'m4',k:'msg',x:930,y:560,t:'Nos tarifs :\nChemise 500 F · Pantalon 700 F\nCostume 2 500 F · Robe 1 500 F\nDrap 1 000 F · Kaba 1 200 F\nRamassage gratuit dès 5 000 F.',nx:'b1'},
+ {id:'m4',k:'msg',x:930,y:560,t:'Nos tarifs :
+Chemise 3,50 € · Pantalon 6 €
+Costume 16 € · Robe 12 €
+Couette 22 € · Manteau 18 €
+Ramassage gratuit dès 30 €.',nx:'b1'},
  {id:'h1',k:'human',x:930,y:820,t:'Transférer à l\'équipe (Lun.–Sam. 7 h – 20 h)\nTemps de réponse moyen : 4 min',nx:null}];
 const byId=id=>N.find(n=>n.id===id);let sel='b1',run=null,Z=.62,OX=10,OY=20;
 function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('on');clearTimeout(t._);t._=setTimeout(()=>t.classList.remove('on'),2200)}
@@ -179,7 +183,7 @@ $('#msgs').onclick=e=>{const b=e.target.closest('.qr button');if(b&&!b.disabled)
 $('#cmp').onsubmit=e=>{e.preventDefault();const v=$('#ti').value.trim();if(!v)return;$('#ti').value='';reply(v)};
 window.__dit=t=>reply(t);window.__bouton=i=>{const b=$$('.qr button:not(:disabled)')[i];if(b)b.click()};
 function restart(){V={nom_profil:'Fabrice'};$('#msgs').innerHTML='<div class="m sys">Aujourd\'hui</div>';wait=null;run=null;setTimeout(()=>reply('Bonjour'),400)}
-$('#restart').onclick=restart;$('#pub').onclick=()=>toast('Scénario publié sur le numéro +237 6 99 00 11 22');
+$('#restart').onclick=restart;$('#pub').onclick=()=>toast('Scénario publié sur le numéro +33 6 99 00 11 22');
 draw();ins();fit();restart();
 </script>
 </body>
